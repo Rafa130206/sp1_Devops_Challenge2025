@@ -14,3 +14,8 @@ COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
+FROM almalinux:latest
+
+RUN useradd -m autuser
+RUN whoami
+
